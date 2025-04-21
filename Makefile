@@ -6,7 +6,7 @@
 #    By: piyu <piyu@student.hive.fi>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 23:25:46 by piyu              #+#    #+#              #
-#    Updated: 2024/11/19 02:51:17 by piyu             ###   ########.fr        #
+#    Updated: 2025/04/21 01:23:11 by piyu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
 	ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
-	ft_tolower.c ft_toupper.c
+	ft_tolower.c ft_toupper.c get_next_line.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -45,15 +45,15 @@ $(NAME): $(OBJS)
 bonus: .bonus
 
 .bonus: $(OBJS) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+		@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 		touch .bonus
 
 clean:
-		rm -f $(OBJS) $(BONUS_OBJS)
+		@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-		rm -f $(NAME)
-		rm -f .bonus
+		@rm -f $(NAME)
+		@rm -f .bonus
 
 re:		fclean all
 

@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	ptr = (char *)0;
-	while (*(s + i))
+	while (s && *(s + i))
 	{
 		if (*((unsigned char *)s + i) == (unsigned char)c)
 			return ((char *)(s + i));
