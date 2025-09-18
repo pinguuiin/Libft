@@ -6,7 +6,7 @@
 #    By: piyu <piyu@student.hive.fi>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 23:25:46 by piyu              #+#    #+#              #
-#    Updated: 2025/04/21 01:23:11 by piyu             ###   ########.fr        #
+#    Updated: 2025/09/18 21:49:17 by piyu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,26 +35,26 @@ BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 BONUS_OBJS = $(BONUS:.c=.o)
 
 %.o: %.c
-	$(COMPILER) $(CFLAGS) -I. -c $< -o $@
+	@$(COMPILER) $(CFLAGS) -I. -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 bonus: .bonus
 
 .bonus: $(OBJS) $(BONUS_OBJS)
-		@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-		touch .bonus
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	touch .bonus
 
 clean:
-		@rm -f $(OBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-		@rm -f $(NAME)
-		@rm -f .bonus
+	@rm -f $(NAME)
+	@rm -f .bonus
 
-re:		fclean all
+re:	fclean all
 
 .PHONY:	all clean fclean re bonus
