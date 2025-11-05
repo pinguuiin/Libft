@@ -16,6 +16,8 @@ COMPILER = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+HEADER = libft.h
+
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -34,7 +36,9 @@ BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
-%.o: %.c
+.SECONDARY: $(OBJS)
+
+%.o: %.c $(HEADER)
 	@$(COMPILER) $(CFLAGS) -I. -c $< -o $@
 
 all: $(NAME)
