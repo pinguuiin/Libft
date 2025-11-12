@@ -12,9 +12,9 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
+
+# define BUFFER_SIZE 1024
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
