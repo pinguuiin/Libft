@@ -14,9 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	if (i)
+		write(fd, s, i);
 }
