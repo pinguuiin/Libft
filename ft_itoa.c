@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	while (--digit >= 0)
 	{
 		ptr[digit + sign_digit] = ((1 - 2 * (long)sign_digit)
-			* (long)n) % 10 + 48;
+								* (long)n) % 10 + 48;
 		n /= 10;
 	}
 	if (sign_digit == 1)
