@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static t_list	*map_n_add(t_list *lst, t_list *new_lst, \
+static t_list	*map_n_add(t_list *lst, t_list *new_lst,
 	void *(*f)(void *), void (*del)(void *))
 {
 	void	*new_content;

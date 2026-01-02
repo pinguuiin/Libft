@@ -28,14 +28,14 @@ static char	*next_line_check(char *line, char *buf)
 	if (ft_strchr(temp, '\n'))
 	{
 		line = ft_substr(temp, 0, ft_strchr(temp, '\n') - temp + 1);
-		ft_memmove(buf, ft_strchr(buf, '\n') + 1, \
-		ft_strlen(ft_strchr(buf, '\n') + 1) + 1);
+		ft_memmove(buf, ft_strchr(buf, '\n') + 1,
+			ft_strlen(ft_strchr(buf, '\n') + 1) + 1);
 	}
 	else
 	{
 		line = ft_substr(temp, 0, ft_strlen(temp));
-		ft_memmove(buf, buf + ft_strlen(buf), \
-		BUFFER_SIZE - ft_strlen(buf) + 1);
+		ft_memmove(buf, buf + ft_strlen(buf),
+			BUFFER_SIZE - ft_strlen(buf) + 1);
 	}
 	free(temp);
 	return (line);
